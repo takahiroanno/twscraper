@@ -9,6 +9,7 @@ if(!($job)){
   return false;
 }
 
+global $job_id = $job['id'];
 $id = $job['id'];
 $query = $job['query'];
 $since_id = $job['since_id'];
@@ -55,6 +56,7 @@ function get_job(){
       return false;
     }
   }catch (PDOException $e){
+    error_job_queue();
     die("接続エラー：{$e->getMessage()}");
   }
 }
@@ -68,6 +70,7 @@ function add_job_queue($query,$since_id,$scheduled_time){
     ");
     $queue->execute();
   }catch (PDOException $e){
+    error_job_queue();
     die("接続エラー：{$e->getMessage()}");
   }
 
@@ -78,6 +81,22 @@ function update_job_queue($id){
     global $db;
     $queue = $db->prepare("
       UPDATE job SET status = 1 WHERE id = $id;
+    ");
+    $queue->execute();
+  }catch (PDOException $e){
+    error_job_queue();
+    die("接続エラー：{$e->getMessage()}");
+  }
+
+}
+
+
+function error_job_queue(){
+  try{
+    global $job_id;
+    global $db;
+    $queue = $db->prepare("
+      UPDATE job SET status = 2 WHERE id = $job_id;
     ");
     $queue->execute();
   }catch (PDOException $e){
@@ -98,6 +117,7 @@ function getDb() {
     $db -> exec('SET NAMES utf8');
     $db -> exec("SET time_zone = '+0:00'");
   } catch (PDOException $e) {
+    error_job_queue();
     die("接続エラー：{$e->getMessage()}");
   }
   return $db;
@@ -145,6 +165,7 @@ function add_tweet_database($tweet){
     $queue->bindParam(':from_user_name',$tweet->from_user_name,PDO::PARAM_STR);
     $queue->execute();
   }catch (PDOException $e){
+    error_job_queue();
     die("接続エラー：{$e->getMessage()}");
   }
 }
