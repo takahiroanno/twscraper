@@ -1,5 +1,5 @@
 <?
-require_once('config.php');
+require_once('/home/ubuntu/twscraper/config.php');
 getDb();
 
 //get_initial_job

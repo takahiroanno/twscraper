@@ -1,0 +1,64 @@
+-- MySQL dump 10.13  Distrib 5.1.54, for debian-linux-gnu (i686)
+--
+-- Host: localhost    Database: twscraper
+-- ------------------------------------------------------
+-- Server version	5.1.54-1ubuntu4
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `tweets`
+--
+
+DROP TABLE IF EXISTS `tweets`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tweets` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `created_at` datetime NOT NULL,
+  `from_user` varchar(50) NOT NULL,
+  `from_user_id` varchar(20) NOT NULL,
+  `from_user_name` varchar(50) NOT NULL,
+  `geo` varchar(100) NOT NULL,
+  `tweet_id` varchar(50) NOT NULL,
+  `profile_image_url` varchar(200) NOT NULL,
+  `profile_image_url_https` varchar(200) NOT NULL,
+  `source` varchar(200) NOT NULL,
+  `text` varchar(300) NOT NULL,
+  `to_user` varchar(50) NOT NULL,
+  `to_user_id` bigint(20) NOT NULL,
+  `to_user_name` varchar(50) NOT NULL,
+  `in_reply_to_status_id` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tweets`
+--
+
+LOCK TABLES `tweets` WRITE;
+/*!40000 ALTER TABLE `tweets` DISABLE KEYS */;
+INSERT INTO `tweets` VALUES (1,'2012-12-03 08:07:18','shangyoko','293550193','瀧田晋煌','','275511513886892032','http://a0.twimg.com/profile_images/1374720016/DSC00014_normal.JPG','https://si0.twimg.com/profile_images/1374720016/DSC00014_normal.JPG','&lt;a href=&quot;http://twitter.com/&quot;&gt;web&lt;/a&gt;','RT @ppwmj: 最高裁判所長官　竹崎博允　　最高裁判所は「憲法の番人」と称される？この方は民主党　江田五月と同期なのは有名だが・・憲法の番人が、憲法を利用した悪人か？は石川知裕君の判決を聞いて更に追求しよう。　前政権、検察、官僚、最高裁事務総局、報道が癒着しない限り小沢事件は起こせない','',0,' ',''),(2,'2012-12-03 08:07:13','orangeleaf_2012','369974457','orangeleaf_2012','','275511491736772608','http://a0.twimg.com/profile_images/2875153141/341d42c1798e1e86967a5f3f280ec938_normal.png','https://si0.twimg.com/profile_images/2875153141/341d42c1798e1e86967a5f3f280ec938_normal.png','&lt;a href=&quot;http://twitter.com/&quot;&gt;web&lt;/a&gt;','RT @rierugabu: ★川端達夫（総務大臣）、嘉田由紀子（滋賀県知事）、越直美（大津市長）を政治から排除しなければ、大津いじめ自殺事件の解明は不可能ですhttp://t.co/lJFUxHa7＞姦国民の生活が第一→全員民主党　みどりの風→全員民主党　減税日本→亀井静香以外民主党　未来の党＝隠れ民主党','',0,' ',''),(3,'2012-12-03 08:07:12','Vermilion_mo','768744930','武井 桃子 （takeimomoko）','','275511491086659585','http://a0.twimg.com/profile_images/2847535232/28a58e051e03d325be7d084a869627cd_normal.png','https://si0.twimg.com/profile_images/2847535232/28a58e051e03d325be7d084a869627cd_normal.png','&lt;a href=&quot;http://twipple.jp/&quot;&gt;ついっぷる for iPhone&lt;/a&gt;','片山さん、それは維新ではなく自民党が言ってることとかツイートするのがもう危機意識がないんだなって感じる。\nどっちが言おうが知ったこっちゃないよ。\n\nトンネルの崩落事故を公共事業が必要だと結びつけたみたいだけど、民主党が政権とったのは三年ぐらいでしょ？','',0,' ',''),(4,'2012-12-03 08:07:12','syouth','129095438','さかきみなと','','275511490168123392','http://a0.twimg.com/profile_images/2818138338/e3877bdcb821f4d44ec93deb6091aad2_normal.png','https://si0.twimg.com/profile_images/2818138338/e3877bdcb821f4d44ec93deb6091aad2_normal.png','&lt;a href=&quot;http://twipple.jp/&quot;&gt;ついっぷる/twipple&lt;/a&gt;','RT @kekeke7: 福島原発事故が民主党による人災事故である事がバレる (5:09) #sm19494808 http://t.co/1UrfW3Mq','',0,' ',''),(5,'2012-12-03 08:07:06','aki_51','273757255','aki','','275511465199407104','http://a0.twimg.com/profile_images/2888424745/4d2caa4c1d3c15f12d244f356bd10a0e_normal.png','https://si0.twimg.com/profile_images/2888424745/4d2caa4c1d3c15f12d244f356bd10a0e_normal.png','&lt;a href=&quot;http://twitter.com/tweetbutton&quot;&gt;Tweet Button&lt;/a&gt;','前回民主党投票の主婦後悔「あの一票を返してほしいぐらい」 - Infoseek ニュース http://t.co/HfgjIInK　鳥越俊太郎の未来の党もロクなもんじゃないよ！ｗ','',0,' ',''),(6,'2012-12-03 08:07:05','sutearaa','966322332','天使','','275511460984135680','http://a0.twimg.com/profile_images/2886017961/5c8ae0a48204718f0361d7352e0b967a_normal.jpeg','https://si0.twimg.com/profile_images/2886017961/5c8ae0a48204718f0361d7352e0b967a_normal.jpeg','&lt;a href=&quot;http://twitter.com/download/iphone&quot;&gt;Twitter for iPhone&lt;/a&gt;','RT @junktsr: 前からずっと気になってたんだけど主にツイッター界隈でアニメアイコンで民主党叩いてる人達ってどういう訳か自民党応援してる人が殆どな気がするんだけど自民党(&amp;公明党)って寧ろそういうアニメ規制派の党なわけだけどその辺どう思ってるんだろう','',0,' ',''),(7,'2012-12-03 08:06:52','kingxresister','557254960','ケイ','','275511407469002752','http://a0.twimg.com/profile_images/2917624127/2c3e9aceac2fe4ff6dca601bbcc9122d_normal.jpeg','https://si0.twimg.com/profile_images/2917624127/2c3e9aceac2fe4ff6dca601bbcc9122d_normal.jpeg','&lt;a href=&quot;http://twitter.com/download/android&quot;&gt;Twitter for Android&lt;/a&gt;','民主党きてる','',0,' ',''),(8,'2012-12-03 08:06:52','office_SUTO','380172385','すとう信彦事務所','','275511404532989952','http://a0.twimg.com/profile_images/1560448823/kaichi_normal.jpg','https://si0.twimg.com/profile_images/1560448823/kaichi_normal.jpg','&lt;a href=&quot;http://twitter.com/&quot;&gt;web&lt;/a&gt;','RT@irityan71 民主党両院総会をニコ生中継してたので覗いてみたら、ちょうど首藤議員発言してて、５０名の同志を失った責任は誰がとるのかと執行部を追及。また各役員が回転ドアのように毎回同じ顔ぶれで新鮮味ない。若手登用して党を再生していく姿勢なければ民主党は終るとも。正論！','irityan71',520751884,'いりちゃん ： 【私は杉村康之応援団】','223350751278284800'),(9,'2012-12-03 08:06:48','asao_jp','105717616','亀井亜佐夫','','275511388573687809','http://a0.twimg.com/profile_images/644986075/DSC_9643_normal.jpg','https://si0.twimg.com/profile_images/644986075/DSC_9643_normal.jpg','&lt;a href=&quot;http://twitter.com/&quot;&gt;web&lt;/a&gt;','RT @tetu0830: 民主党はもうありえない！と思いつつ、どの政党に投票しようかと消去法で考えていくうちに、すべての政党が消えてしまって、仕方なく、もう一度まっさらにして消去法の消去法だと検討していると、民主党が残ってしまうというジレンマ抱えている人って他にもいるよね…','',0,' ',''),(10,'2012-12-03 08:06:44','Angama_Market','97314263','Angama','','275511374002651136','http://a0.twimg.com/profile_images/2633556791/680abd54934891fe49a3880508e1788c_normal.jpeg','https://si0.twimg.com/profile_images/2633556791/680abd54934891fe49a3880508e1788c_normal.jpeg','&lt;a href=&quot;http://sites.google.com/site/yorufukurou/&quot;&gt;YoruFukurou&lt;/a&gt;','最初はみんな民主党に期待してたよね。','',0,' ',''),(11,'2012-12-03 08:06:44','gucchigucchi22','522132157','hiro','','275511371473506305','http://a0.twimg.com/profile_images/2418196919/356C99C1-45A1-4B42-AA5F-0B27150BA635_normal','https://si0.twimg.com/profile_images/2418196919/356C99C1-45A1-4B42-AA5F-0B27150BA635_normal','&lt;a href=&quot;http://www.apple.com&quot;&gt;Safari on iOS&lt;/a&gt;','保守速報 : 【未来の党】嘉田代表「政権公約に、民主党の2009年の公約と同じ月２万6000円の子ども手当の支給を盛りこんだ、この数字に根拠がないのは知っている」 http://t.co/OYtSEqdW','',0,' ',''),(12,'2012-12-03 08:06:43','ie1230','90327743','ie1230','','275511365978976256','http://a0.twimg.com/profile_images/1250939700/icon12983343694827_normal.jpg','https://si0.twimg.com/profile_images/1250939700/icon12983343694827_normal.jpg','&lt;a href=&quot;http://windows.microsoft.com/&quot;&gt;Windows 8&lt;/a&gt;','RT @cphara: 今朝のＴＢＳＲａｄｉｏで評論家小沢遼子氏　「松下政経塾出身の民主党議員２８名の大部分の本音は自民党から立候補したかった。枠が無く止むを得ず民主党から立候補した。」それで納得、自民党への擦り寄り、民主党のマニフェストなんぞ糞食らえの態度。こんな輩は早く民主党から追い出すべき！','',0,' ',''),(13,'2012-12-03 08:06:41','kobayashi4567','589798052','月の犬','','275511360119504897','http://a0.twimg.com/profile_images/2249131566/image_normal.jpg','https://si0.twimg.com/profile_images/2249131566/image_normal.jpg','&lt;a href=&quot;http://tweetli.st/&quot;&gt;TweetList!&lt;/a&gt;','徴兵は大嘘。例えばこいつを徴兵しても何の役に立たないことからも明らか⇒ @Fibrodysplasia: ママ達に言いたいが、もし、自民・公明・平成維新の会・民主党に投票すれば、徴兵制になる。そしたら苦労して育てた可愛いわが子が国に取られる。取られた子供は福島原発で働かされて被曝','',0,' ',''),(14,'2012-12-03 08:06:41','natsukamotoya','918531522','名塚元哉','','275511357787488256','http://a0.twimg.com/profile_images/2864606407/1da871f4ddd581617dee57514a2b9c92_normal.jpeg','https://si0.twimg.com/profile_images/2864606407/1da871f4ddd581617dee57514a2b9c92_normal.jpeg','&lt;a href=&quot;http://twitter.com/&quot;&gt;web&lt;/a&gt;','RT @learnologist: 他方、２００９年民主党マニフェスト責任者だった小沢一郎氏が「民主党は約束を守っていない」と言うけれど、守りようもない約束をした自分自身の責任について何も認めていないのはおかしいと思います。 RT @orz_oz','',0,' ',''),(15,'2012-12-03 08:06:39','kekeke7','61132025','xtreme','','275511353089863680','http://a0.twimg.com/profile_images/1253638062/69706_i_normal.jpg','https://si0.twimg.com/profile_images/1253638062/69706_i_normal.jpg','&lt;a href=&quot;http://twitter.com/tweetbutton&quot;&gt;Tweet Button&lt;/a&gt;','福島原発事故が民主党による人災事故である事がバレる (5:09) #sm19494808 http://t.co/1UrfW3Mq','',0,' ','');
+/*!40000 ALTER TABLE `tweets` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2012-12-03  8:14:47
