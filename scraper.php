@@ -9,7 +9,8 @@ if(!($job)){
   return false;
 }
 
-global $job_id = $job['id'];
+global $job_id;
+$job_id= $job['id'];
 $id = $job['id'];
 $query = $job['query'];
 $since_id = $job['since_id'];
