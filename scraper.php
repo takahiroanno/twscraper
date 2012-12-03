@@ -31,7 +31,7 @@ $oldest_time = strtotime($data->results[$length-1]->created_at);
 
 //calculate_scheduled_time
 $velocity = ($length -1) / (time() - $oldest_time);
-$scheduled_time = time() + (30 / $velocity);
+$scheduled_time = time() + (50 / $velocity);
 $scheduled_time = date('Y-m-d H:i:s',$scheduled_time);
 
 
@@ -105,7 +105,7 @@ function getDb() {
 
 function tweet_search($query,$since_id){
 
-  $url = 'http://search.twitter.com/search.json?q=' . urlencode($query) . '&since_id=' . urlencode($since_id);
+  $url = 'http://search.twitter.com/search.json?rpp=100&q=' . urlencode($query) . '&since_id=' . urlencode($since_id);
   $response = file_get_contents($url);
   $data = json_decode($response);
   return $data;
@@ -115,6 +115,7 @@ function tweet_search($query,$since_id){
 function add_tweet_database($tweet){
   try{
     global $db;
+
     $queue = $db->prepare('
       INSERT INTO tweets(created_at,from_user,from_user_id,from_user_name,geo,tweet_id,profile_image_url,profile_image_url_https,source,
         text,to_user,to_user_id,to_user_name,in_reply_to_status_id)
